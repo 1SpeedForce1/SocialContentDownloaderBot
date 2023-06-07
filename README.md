@@ -1,56 +1,81 @@
-*SocialContentDownloaderBot*
-This repository contains a Telegram bot written in Python 3.10 that allows you to download content from various social media platforms such as Instagram, TikTok, Pinterest, and YouTube Shorts. By simply sending the bot a link, it will download and send you the requested content.
+# SocialContentDownloaderBot
 
-##Installation##
-To run the SocialContentDownloaderBot, follow these steps:
+SocialContentDownloaderBot - это телеграм-бот, написанный на языке Python 3.10, который позволяет скачивать контент из социальных сетей: Instagram, TikTok, Pinterest, YouTube Shorts. Достаточно лишь отправить ссылку, и бот скачает и отправит вам запрашиваемый контент. Для скачивания используется web scraping, а также сервис [Lamadava SaaS](https://lamadava.com/).
 
-Clone this repository to your local machine.
+![Скриншот 1](https://i.ibb.co/L6CcTcL/photo-2023-06-07-12-45-29.jpg)
 
-git clone https://github.com/your-username/SocialContentDownloaderBot.git
+## Установка
 
+1. Убедитесь, что у вас установлен Python 3.10. Если нет, скачайте и установите его с [официального сайта](https://www.python.org/downloads/).
 
-Install the required libraries by running the following command:
+2. Склонируйте репозиторий:
 
-pip install -r requirements.txt
-
-This will install the necessary dependencies including PyTelegramBotAPI, bs4, telebot, sqlite3, pytube, flask, requests, moviepy, PIL, and ast.
-
-Open the main.py file and make the following changes:
-
-Replace the placeholder value in the token variable with your Telegram bot token.
-Replace the placeholder value in the api_key_lamadava variable with your Lamadava SaaS API key.
-Replace the placeholders in the tg1 and tg2 variables with the Telegram IDs of the bot administrators.
-Run the main.py script to start the bot:
-python main.py
+```git clone https://github.com/yourusername/SocialContentDownloaderBot.git```
 
 
-##Usage
-Once the bot is up and running, you can interact with it on Telegram. Send it a link to the content you want to download from Instagram, TikTok, Pinterest, or YouTube Shorts. The bot will download the content and send it back to you.
+3. Перейдите в каталог проекта:
 
-##Libraries Used
-The following libraries are used in this project:
+```cd SocialContentDownloaderBot```
 
-json
-math
-pathlib
-shutil
-time
-beautifulsoup4
-telebot
-sqlite3
-re
-pytube
-tldextract
-flask
-requests
-moviepy
-pathlib
-PIL
-urllib
 
-##Disclaimer
-Please note that this bot utilizes web scraping techniques and relies on Lamadava SaaS service for content downloading. Make sure to comply with the terms of service and copyright regulations of the respective social media platforms when using this bot.
+4. Установите необходимые библиотеки:
 
-If you encounter any issues or have any suggestions for improvements, feel free to open an issue or submit a pull request.
+```pip install -r requirements.txt```
 
-Happy downloading!
+
+## Настройка
+
+1. В файле main.py вставьте токен от телеграм-бота в переменную token.
+
+2. Вставьте API-ключ от сервиса Lamadava SaaS в переменную api_key_lamadava.
+
+3. Вставьте ID администраторов бота в переменные tg1 и tg2.
+
+## Запуск
+
+Для запуска проекта нужно запустить файл run.bat.
+
+## Использование
+
+Отправьте ссылку на контент из одной из поддерживаемых социальных сетей, и бот скачает и отправит вам контент.
+
+![Скриншот 2](https://i.ibb.co/vHbDp5m/photo-2023-06-07-12-49-07.jpg)
+## Библиотеки
+
+- PyTelegramBotAPI
+- json
+- math
+- pathlib
+- shutil
+- time
+- bs4 (BeautifulSoup)
+- telebot
+- telebot.types
+- sqlite3
+- re
+- pytube
+- tldextract
+- Flask
+- typing
+- requests
+- moviepy.editor
+- pathlib.Path
+- PIL (Image)
+- urllib.parse
+- os
+- ast.literal_eval
+
+# Использование Git Flow
+Рекомендуется использовать Git Flow для улучшения процесса разработки и коллективной работы над проектом. Git Flow представляет собой набор правил и рекомендаций по ветвлению в Git, что помогает организовать процесс разработки и упростить его управление.
+![Скриншот 2](https://i.ibb.co/MGc3xYr/04-Hotfix-branches.png)
+
+Основные ветки в Git Flow включают:
+- Main: это основная ветка, которая содержит стабильную версию проекта.
+- Develop: это ветка разработки, где происходит интеграция новых функций и исправлений.
+
+Кроме того, есть несколько дополнительных веток:
+- Feature: это ветки для разработки новых функций. Они создаются от ветки Develop и после завершения работы вливаются обратно в неё.
+- Release: эти ветки используются для подготовки релиза. Они создаются от ветки Develop и после завершения подготовки релиза вливаются как в Main, так и в Develop.
+- Hotfix: эти ветки используются для исправления критических ошибок в основной ветке. Они создаются от ветки Main и после исправления ошибки вливаются как в Main, так и в Develop.
+
+Для удобства работы с Git Flow рекомендуется использовать расширение для Git, которое автоматизирует большинство операций. Вы можете начать использовать его, выполнив команду ```git flow init```
