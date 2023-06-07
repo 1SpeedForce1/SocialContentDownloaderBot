@@ -1,4 +1,4 @@
-=SocialContentDownloaderBot=
+*SocialContentDownloaderBot*
 This repository contains a Telegram bot written in Python 3.10 that allows you to download content from various social media platforms such as Instagram, TikTok, Pinterest, and YouTube Shorts. By simply sending the bot a link, it will download and send you the requested content.
 
 ##Installation##
